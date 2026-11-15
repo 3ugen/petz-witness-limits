@@ -292,6 +292,13 @@ thresholds before #3 starts.
 
 ## 6. Correction log
 
+- 2026-11-15 (v3.1): PUBLISHED — github.com/3ugen/petz-witness-limits
+  (public, MIT). Pre-publication: held-out coverage PASS (350/350,
+  fresh seeds, incl. degenerate marginal case — Appendix C item 2
+  closed); full reference audit against arXiv/APS (3 preprints
+  upgraded to journal refs). Project complete; the skeleton is now a
+  historical record.
+
 - 2026-11-15 (v3.0): PAPER v0.2 — both draft reviews absorbed (Carbon
   v7 direct-API high: MAJOR REVISION; Qwen4-Max v7b budget-32k: MAJOR
   REVISION; convergent highest-value edit = claims-strength
