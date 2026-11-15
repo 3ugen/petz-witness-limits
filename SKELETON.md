@@ -292,6 +292,17 @@ thresholds before #3 starts.
 
 ## 6. Correction log
 
+- 2026-11-14 (v2.8): Run 2 DONE on macOS arm64 (branch run2-mac-scs,
+  merged; CSV re-verified here). Honest outcome: the anticipated
+  decision-level unsoundness of plug-ins did NOT materialize — 0 false
+  certs for all three pipelines; separation is in refusal margins
+  (min UCB−τ: ours +0.45, MLE-CMI +0.19, FoR-SDP +0.05) and in the
+  theorem-vs-observation status. Soundness-delta prose downgraded per
+  the pre-committed rule (results/K3_BENCH.md §Run 2). Platform
+  finding: CLARABEL SolverError on rank-deficient reconstructions
+  (macOS arm64) — SCS fallback added to sdp.py. All review-mandated
+  runs complete; #6 draft unblocked.
+
 - 2026-11-14 (v2.7): Carbon v6 results review ACCEPTED (MORE RUNS
   NEEDED; analysis notes/2026-11-14-carbon-v6-results-analysis.md —
   5 numeric probes, incl. two confirmed defects of ours: min_floor

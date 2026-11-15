@@ -86,7 +86,16 @@ def fidelity_of_recovery_sq(
     ]
     objective = cp.Maximize(cp.real(cp.trace(x_var)))
     problem = cp.Problem(objective, constraints)
-    problem.solve(solver=solver)
+    try:
+        problem.solve(solver=solver)
+    except cp.error.SolverError:
+        # CLARABEL raises SolverError on rank-deficient shadow
+        # reconstructions on macOS arm64 (observed 3/3 on Run 2, while
+        # solving exact states fine); SCS solves them. Fall back once.
+        if solver != "SCS":
+            problem.solve(solver="SCS")
+        else:
+            raise
     value = problem.value
     if problem.status not in ("optimal", "optimal_inaccurate") or value is None:
         raise RuntimeError(f"fidelity-of-recovery SDP failed: status={problem.status}")

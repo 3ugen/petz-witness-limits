@@ -105,10 +105,29 @@ relabel accepted: the m=4 budgets are full-basis Pauli tomography
 
 Verdict unchanged: NO-GO branch stands (reconstruction dominates);
 the witness's value is the soundness direction, now with honest
-magnitudes. Run 2 (near-threshold negative false-cert rates) was lost
-to an OOM kill before any output was flushed — pending rerun; until it
-lands, the soundness-delta prose stays at "systematic downward plug-in
-bias" strength.
+magnitudes.
+
+## Run 2 result (near-threshold negatives; macOS arm64, 2026-11-14)
+
+Family ρ(λ) = (1−λ)|GHZ₄⟩⟨GHZ₄| + λ·ρ_GHZ-cl tuned to exact
+−ln F_sq ∈ {0.13, 0.18} (true negatives just above τ = 0.10); 100 reps
+× N ∈ {3e3, 1e4, 3e4} for ours and MLE-CMI, 30 reps at 1e4 for FoR-SDP
+(SCS; CLARABEL raised SolverError on every rank-deficient shadow
+reconstruction on that platform — fallback now in sdp.py). CSV verified
+independently on this machine (results/k3_negatives.csv, 1260 rows).
+
+**The anticipated decision-level asymmetry did NOT appear: 0 false
+certifications in every cell for ALL THREE pipelines** (ours 0/600,
+MLE-CMI 0/600, FoR-SDP 0/60 across both targets). What DID separate the
+pipelines is the safety margin — minimum UCB over τ across all runs:
+ours +0.45 / +0.54 (targets 0.13 / 0.18), MLE-CMI +0.19 / +0.21,
+FoR-SDP +0.05 / +0.08. Per the pre-committed downgrade rule, the paper
+prose is: plug-in pipelines show systematic downward bias on entangled
+negatives (point-estimate probes) and an order-of-magnitude thinner
+refusal margin (0.05 vs 0.45 nats), but no false certifications
+materialized at the tested budgets; the witness's soundness remains a
+THEOREM, the plug-ins' an empirical observation on this family. No
+stronger sentence is licensed by this data.
 
 ## Rule-evidence chain
 
