@@ -1,0 +1,120 @@
+
+=== target −lnF = 0.13: λ = 0.3456, exact −lnF = 0.1300, CMI = 0.2328 ===
+  N=  3000: false-cert ours 0/100, MLE-CMI 0/100   (53s)
+  N= 10000: false-cert ours 0/100, MLE-CMI 0/100   (118s)
+  N= 30000: false-cert ours 0/100, MLE-CMI 0/100   (205s)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+    sdp rep 0: ucb 0.2325   (652s)
+    sdp rep 1: ucb 0.1985   (662s)
+    sdp rep 2: ucb 0.2319   (690s)
+    sdp rep 3: ucb 0.1835   (690s)
+    sdp rep 4: ucb 0.1956   (690s)
+    sdp rep 5: ucb 0.2255   (690s)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+    sdp rep 6: ucb 0.2276   (1071s)
+    sdp rep 7: ucb 0.1916   (1071s)
+    sdp rep 8: ucb 0.2107   (1071s)
+    sdp rep 9: ucb 0.1625   (1071s)
+    sdp rep 10: ucb 0.1575   (1090s)
+    sdp rep 11: ucb 0.1704   (1101s)
+    sdp rep 12: ucb 0.1966   (1427s)
+    sdp rep 13: ucb 0.2437   (1467s)
+    sdp rep 14: ucb 0.1833   (1538s)
+    sdp rep 15: ucb 0.1986   (1549s)
+    sdp rep 16: ucb 0.2011   (1549s)
+    sdp rep 17: ucb 0.2109   (1549s)
+    sdp rep 18: ucb 0.1731   (1783s)
+    sdp rep 19: ucb 0.2316   (1901s)
+    sdp rep 20: ucb 0.2073   (1901s)
+    sdp rep 21: ucb 0.2054   (1901s)
+    sdp rep 22: ucb 0.2370   (2004s)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+    sdp rep 23: ucb 0.2279   (2029s)
+    sdp rep 24: ucb 0.1545   (2189s)
+    sdp rep 25: ucb 0.2250   (2209s)
+    sdp rep 26: ucb 0.2233   (2382s)
+    sdp rep 27: ucb 0.1976   (2382s)
+    sdp rep 28: ucb 0.2531   (2441s)
+    sdp rep 29: ucb 0.1888   (2441s)
+  SDP arm (N=10000, 30 reps, 8 blocks, solver SCS): false-cert FoR-SDP 0/30
+
+=== target −lnF = 0.18: λ = 0.2581, exact −lnF = 0.1800, CMI = 0.3085 ===
+  N=  3000: false-cert ours 0/100, MLE-CMI 0/100   (2493s)
+  N= 10000: false-cert ours 0/100, MLE-CMI 0/100   (2557s)
+  N= 30000: false-cert ours 0/100, MLE-CMI 0/100   (2645s)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+    sdp rep 0: ucb 0.2805   (3121s)
+    sdp rep 1: ucb 0.2410   (3121s)
+    sdp rep 2: ucb 0.2843   (3121s)
+    sdp rep 3: ucb 0.2509   (3121s)
+    sdp rep 4: ucb 0.2611   (3139s)
+    sdp rep 5: ucb 0.2279   (3165s)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+    sdp rep 6: ucb 0.3013   (3592s)
+    sdp rep 7: ucb 0.2287   (3592s)
+    sdp rep 8: ucb 0.2802   (3592s)
+    sdp rep 9: ucb 0.2131   (3628s)
+    sdp rep 10: ucb 0.3603   (3632s)
+    sdp rep 11: ucb 0.2365   (3721s)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  problem.solve(solver=solver)
+    sdp rep 12: ucb 0.2624   (4002s)
+    sdp rep 13: ucb 0.2000   (4066s)
+    sdp rep 14: ucb 0.2740   (4150s)
+    sdp rep 15: ucb 0.2943   (4244s)
+    sdp rep 16: ucb 0.2321   (4244s)
+    sdp rep 17: ucb 0.1977   (4244s)
+    sdp rep 18: ucb 0.2450   (4425s)
+    sdp rep 19: ucb 0.1788   (4552s)
+    sdp rep 20: ucb 0.2306   (4552s)
+    sdp rep 21: ucb 0.2856   (4553s)
+    sdp rep 22: ucb 0.2130   (4579s)
+    sdp rep 23: ucb 0.2275   (4623s)
+    sdp rep 24: ucb 0.2431   (4869s)
+    sdp rep 25: ucb 0.2201   (4972s)
+    sdp rep 26: ucb 0.2676   (5069s)
+    sdp rep 27: ucb 0.3024   (5143s)
+    sdp rep 28: ucb 0.2249   (5143s)
+    sdp rep 29: ucb 0.2530   (5143s)
+  SDP arm (N=10000, 30 reps, 8 blocks, solver SCS): false-cert FoR-SDP 0/30
+wrote /Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/results/k3_negatives.csv
+EXIT 0

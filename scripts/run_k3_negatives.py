@@ -14,8 +14,16 @@ A sound 95% one-sided method may false-certify ≤ 5% of runs.
 
 from __future__ import annotations
 
+import os
+
+# One BLAS thread per process: the SDP arm runs in CONF_SDP_WORKERS
+# processes, and oversubscribed BLAS threads would slow all of them.
+for _var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "VECLIB_MAXIMUM_THREADS"):
+    os.environ.setdefault(_var, "1")
+
 import sys
 import time
+from concurrent.futures import ProcessPoolExecutor
 
 import numpy as np
 
@@ -45,6 +53,14 @@ CONF_SDP_REPS = 30
 CONF_SDP_BLOCKS = 8
 CONF_SDP_BUDGET = 10_000
 CONF_SEED = 20261114
+#: SDP solver for the FoR-SDP arm. CLARABEL fails (SolverError) on every
+#: rank-deficient shadow reconstruction tried on macOS arm64 (3 of 3, while
+#: it solves the exact ρ); SCS solves all of them. Stated in the log.
+CONF_SDP_SOLVER = "SCS"
+#: Parallel processes for the SDP arm (≈0.45 GB peak RSS each, measured).
+#: Datasets are drawn sequentially from the single RNG stream first, so the
+#: data are identical to a single-process run; only the solving is parallel.
+CONF_SDP_WORKERS = 6
 
 DIMS = Tripartition(2, 4, 2)
 
@@ -81,7 +97,7 @@ def sdp_jackknife_ucb(ds: PauliDataset) -> float:
 
     def nlf_of(sub: PauliDataset) -> float:
         rho_hat = shadow_reconstruction(sub, DIMS)
-        f = fidelity_of_recovery_sq(rho_hat, DIMS)
+        f = fidelity_of_recovery_sq(rho_hat, DIMS, solver=CONF_SDP_SOLVER)
         return float(-np.log(max(f, 1e-12)))
 
     point = nlf_of(ds)
@@ -133,15 +149,18 @@ def main() -> int:
                 flush=True,
             )
         fc_c = 0
-        for rep in range(CONF_SDP_REPS):
-            ds = sample_dataset(rho, DIMS, CONF_SDP_BUDGET, rng)
-            u = sdp_jackknife_ucb(ds)
-            fc_c += int(u <= CONF_TAU)
-            writer.writerow([target, f"{lam:.6f}", f"{nlf:.6f}", "sdp", CONF_SDP_BUDGET, rep, f"{u:.6f}"])
-            fh.flush()
+        sdp_sets = [sample_dataset(rho, DIMS, CONF_SDP_BUDGET, rng) for _ in range(CONF_SDP_REPS)]
+        with ProcessPoolExecutor(max_workers=CONF_SDP_WORKERS) as pool:
+            for rep, u in enumerate(pool.map(sdp_jackknife_ucb, sdp_sets)):
+                fc_c += int(u <= CONF_TAU)
+                writer.writerow([target, f"{lam:.6f}", f"{nlf:.6f}", "sdp", CONF_SDP_BUDGET, rep, f"{u:.6f}"])
+                fh.flush()
+                print(f"    sdp rep {rep}: ucb {u:.4f}   ({time.time() - t0:.0f}s)", flush=True)
         print(
             f"  SDP arm (N={CONF_SDP_BUDGET}, {CONF_SDP_REPS} reps, "
-            f"{CONF_SDP_BLOCKS} blocks): false-cert FoR-SDP {fc_c}/{CONF_SDP_REPS}"
+            f"{CONF_SDP_BLOCKS} blocks, solver {CONF_SDP_SOLVER}): "
+            f"false-cert FoR-SDP {fc_c}/{CONF_SDP_REPS}",
+            flush=True,
         )
     fh.close()
     print(f"wrote {out_path}")

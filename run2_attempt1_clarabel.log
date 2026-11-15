@@ -1,0 +1,31 @@
+
+=== target −lnF = 0.13: λ = 0.3456, exact −lnF = 0.1300, CMI = 0.2328 ===
+  N=  3000: false-cert ours 0/100, MLE-CMI 0/100   (52s)
+  N= 10000: false-cert ours 0/100, MLE-CMI 0/100   (115s)
+  N= 30000: false-cert ours 0/100, MLE-CMI 0/100   (202s)
+/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py:89: UserWarning: Constraint #0 contains too many subexpressions. Consider vectorizing your CVXPY code to speed up compilation.
+  problem.solve(solver=solver)
+Traceback (most recent call last):
+  File "/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/scripts/run_k3_negatives.py", line 152, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/scripts/run_k3_negatives.py", line 138, in main
+    u = sdp_jackknife_ucb(ds)
+  File "/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/scripts/run_k3_negatives.py", line 87, in sdp_jackknife_ucb
+    point = nlf_of(ds)
+  File "/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/scripts/run_k3_negatives.py", line 84, in nlf_of
+    f = fidelity_of_recovery_sq(rho_hat, DIMS)
+  File "/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/src/petz_witness/sdp.py", line 89, in fidelity_of_recovery_sq
+    problem.solve(solver=solver)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/.venv/lib/python3.14/site-packages/cvxpy/problems/problem.py", line 687, in solve
+    return solve_func(self, *args, **kwargs)
+  File "/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/.venv/lib/python3.14/site-packages/cvxpy/problems/problem.py", line 1148, in _solve
+    self.unpack_results(solution, solving_chain, inverse_data)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/acord/Documents/Claude/code/math/yukon/p3-petz-witness/.venv/lib/python3.14/site-packages/cvxpy/problems/problem.py", line 1453, in unpack_results
+    raise error.SolverError(
+    ...<2 lines>...
+            "information.")
+cvxpy.error.SolverError: Solver 'CLARABEL' failed. Try another solver, or solve with verbose=True for more information.
+EXIT 1
