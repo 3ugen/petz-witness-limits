@@ -332,8 +332,10 @@ projection vanishes and the normal quantile is approximate — a caveat
 that applies exactly on the stabilizer-like target states. Empirical
 coverage of the exact U was 100% across all runs below; because the
 estimator went through four recorded revisions on development data
-(Appendix C), this coverage figure is partly in-sample, and a
-held-out-seed check is the clean completion we have not run.
+(Appendix C), we additionally ran a held-out check on fresh seeds
+never used in development (seven state families including the
+degenerate maximally-mixed-F₁ case, two budgets, 350 runs):
+coverage 350/350.
 
 **Reconstruction pipeline.** Projected MLE (PSD, unit trace) of the
 full ρ_{SF₁F₂} from the same shadows, plug-in CMI, delete-block
@@ -543,8 +545,8 @@ functional → subsampled U-statistics → covariance-aware box → exact
 complete U-statistics), each replacing a diagnosed statistical flaw
 (a non-vanishing Jensen bias of block-averaged nonlinear functionals;
 a Monte-Carlo variance floor from subsample caps); revisions used
-development data, so the reported 100% UCB coverage is partly
-in-sample; (3) the two pre-registered outcome branches for the
+development data; a held-out coverage check on fresh seeds (350/350,
+§5) closes the resulting in-sample concern; (3) the two pre-registered outcome branches for the
 validity map did not anticipate a non-empty-but-smaller-than-targeted
 certified region; the boundary framing used here was an explicit
 decision recorded at that point; (4) a formally passing recall
@@ -567,8 +569,9 @@ solver behavior is documented in the repository. All errors are ours.
 
 ## References
 
-(Author lists and page numbers re-verified at submission; inline
-citations use the bracketed forms above.)
+(Author lists, journal references and page numbers verified against
+arXiv/APS on 2026-11-15; inline citations use the bracketed forms
+above.)
 
 - D. Petz, Commun. Math. Phys. 105, 123 (1986); Q. J. Math. 39, 97 (1988).
 - P. Hayden, R. Jozsa, D. Petz, A. Winter, Commun. Math. Phys. 246, 359 (2004).
@@ -587,9 +590,9 @@ citations use the bracketed forms above.)
 - J. Y. Lee, C.-M. Jian, C. Xu, PRX Quantum 4, 030317 (2023). arXiv:2301.05238.
 - S. Sang, Y. Zou, T. H. Hsieh, Phys. Rev. X 14, 031044 (2024). arXiv:2310.08639.
 - S. Sang, T. H. Hsieh, Phys. Rev. Lett. 134, 070403 (2025). arXiv:2404.07251.
-- Y. Bao, R. Fan, A. Vishwanath, E. Altman, arXiv:2301.05687.
-- R. Fan, Y. Bao, E. Altman, A. Vishwanath, arXiv:2301.05689.
+- Y. Bao, R. Fan, A. Vishwanath, E. Altman, Phys. Rev. Lett. 136, 220402 (2026). arXiv:2301.05687.
+- R. Fan, Y. Bao, E. Altman, A. Vishwanath, PRX Quantum 5, 020343 (2024). arXiv:2301.05689.
 - R. Rubboli, A. Arqand, M. Wilde, arXiv:2609.34699.
 - arXiv:2610.12929; arXiv:2610.11235 (stability of Markov length).
 - Torvinen et al., arXiv:2605.06848.
-- Petz-recovery experiments: arXiv:2504.20399 (trapped ions); arXiv:2606.12020 (photonic).
+- Petz-recovery experiments: W.-H. Png, V. Scarani, Phys. Rev. A 112, 022613 (2025), arXiv:2504.20399 (trapped ions); H. Li et al., arXiv:2606.12020 (photonic).
