@@ -292,6 +292,14 @@ thresholds before #3 starts.
 
 ## 6. Correction log
 
+- 2026-11-14 (v2.9): #6 DONE — PAPER.md draft v0.1 written per §3
+  structure under the adopted title; all numbers sourced from
+  K0-K4 reports + Runs 1-3; honesty box (Appendix C) carries the five
+  flagged deviations and the caught-bug list; references restricted to
+  the audited set with a re-check note. Project tasks #1-#6 complete;
+  remaining: owner read-through → external draft review (Carbon v7
+  prompt on request) → arXiv/journal decision.
+
 - 2026-11-14 (v2.8): Run 2 DONE on macOS arm64 (branch run2-mac-scs,
   merged; CSV re-verified here). Honest outcome: the anticipated
   decision-level unsoundness of plug-ins did NOT materialize — 0 false
