@@ -10,7 +10,11 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["pytest>=8", "pyrefly"]
+dev = [
+    "pytest>=8",
+    "pyrefly",
+    "matplotlib>=3.11.2",
+]
 
 [build-system]
 requires = ["hatchling"]

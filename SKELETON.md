@@ -292,6 +292,19 @@ thresholds before #3 starts.
 
 ## 6. Correction log
 
+- 2026-11-15 (v3.0): PAPER v0.2 — both draft reviews absorbed (Carbon
+  v7 direct-API high: MAJOR REVISION; Qwen4-Max v7b budget-32k: MAJOR
+  REVISION; convergent highest-value edit = claims-strength
+  reconciliation). All checkable attacks verified before adoption
+  (notes/2026-11-15-v7-draft-review-analysis.md): Θ(log d) scope,
+  U = I on the §5.1 family (1e-14), Eq.(6) coefficient-1 asymptotics,
+  slack decomposition ×8/×3.1, p_c definition reconciled with the
+  recall curve, three-copy p₃ fix, 4^m rule removed, pre-registration
+  sentence qualified, in-sample-coverage limitation stated. Figures
+  1-2 generated from recorded CSVs; B.4's SE(σ̂²)@1e6 measured
+  (3.7e-4) before printing. Remaining pre-submission duties: reference
+  re-check, optional held-out coverage run, publication repo decision.
+
 - 2026-11-14 (v2.9): #6 DONE — PAPER.md draft v0.1 written per §3
   structure under the adopted title; all numbers sourced from
   K0-K4 reports + Runs 1-3; honesty box (Appendix C) carries the five
